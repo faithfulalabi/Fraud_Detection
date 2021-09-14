@@ -52,14 +52,16 @@ def evaluate_model(model,x_train,y_train,x_test,y_test):
     4. testing x data
     5. testing y data
     '''
+    # fits the model to the training data,and stores the model name
     model.fit(x_train,y_train)
     model_name= type(model).__name__
     
+    # scores the train and test datasets
     train_score=model.score(x_train,y_train)
     test_score=model.score(x_test,y_test)
     print (f"Training Mean Accuracy score: {train_score}\nTesting Mean Accuracy score: {test_score}")
     
-    
+    # makes prediction based off the test set
     y_pred=model.predict(x_test)
     print("Prediction completed.")
     

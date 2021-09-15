@@ -46,5 +46,5 @@ Ultimately I chose the Random Forest model because of it's robustness to dealing
            0       1.00      1.00      1.00     56862
            1       0.95      0.82      0.88       100
  
-![alt text](https://github.com/faithfulalabi/Fraud_Detection/blob/main/RandomForestClassifier_Confusion Matrix.png?raw=true)
+![alt text](https://github.com/faithfulalabi/Fraud_Detection/blob/main/RandomForestClassifier_Confusion&#32;Matrix.png?raw=true)
 

@@ -26,7 +26,25 @@ The only data preperation I had to do for this dataset was fixing the imbalance 
 
 ## Model Building
 
+I first split the data into training and testing sets with a test size of 20%. I then scaled the data and tested Logistic, KNeighborsClassifier, SVC, XGBClassifier, DecisionTreeClassifier, AdaBoostClassifier, RandomForestClassifier, and ExtraTreesClassifier models on the training dataset using both accuracy and recall as my scoring metric(See the results of model performance on training set down below). I chose recall as my main scoring metric for this problem because the business will care more reducing the amount of false negatives, meaning transcations the model predicts as none fradulent but were actually fradulent. 
+
+![alt text](https://github.com/faithfulalabi/Fraud_Detection/blob/main/Training_accuracy_Scores.png?raw=true)
+![alt text](https://github.com/faithfulalabi/Fraud_Detection/blob/main/Training_recall_Scores.png?raw=true)
+
+Ultimately I chose the Random Forest model because of it's robustness to dealing with outliers, ability to run efficiently on a large dataset, and lower risk of overfitting. I then used a RandomizedSearchCV to tune these parameters: max_features, max_depth, min_samples_split, min_samples_leaf, bootstrap, n_estimators for the best combination using recall as my scoring metric.
 
 
 
 ## Model Performance
+
+* RandomForestClassifier:
+    Training Mean Accuracy score: 1.0
+    Testing Mean Accuracy score: 0.9996137776061234
+    
+     precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56862
+           1       0.95      0.82      0.88       100
+ 
+![alt text](https://github.com/faithfulalabi/Fraud_Detection/blob/main/RandomForestClassifier_Confusion Matrix.png?raw=true)
+
